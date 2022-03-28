@@ -11,6 +11,12 @@ app_ui <- function(request) {
     # Your application UI logic
     fluidPage(
       h1("myshinyapp")
+      tabsetPanel(
+        tabPanel(title = "panel1",
+                 "Input_module"),
+        tabPanel(title = "panel2",
+                 "Plotting_module")
+      )
     )
   )
 }
