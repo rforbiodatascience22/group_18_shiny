@@ -29,13 +29,26 @@ mod_Plotting_module_ui <- function(id){
   )
 }
 
+
+
+
+
+
 #' Plotting_module Server Functions
 #'
 #' @noRd
 mod_Plotting_module_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-
+    output$abundance <- renderPlot({
+      if(input$peptide == ""){
+        NULL
+      } else{
+        input$peptide %>%
+          centralDogma::plot_abundance() +
+          ggplot2::theme(legend.position = "none")
+      }
+    })
   })
 }
 
