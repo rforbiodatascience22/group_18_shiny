@@ -13,9 +13,10 @@ app_ui <- function(request) {
       h1("myshinyapp"),
       tabsetPanel(
         tabPanel(title = "panel1",
-                 "mod_Input_module"),
+
+                 mod_Input_module_ui("Input_module_1")),
         tabPanel(title = "panel2",
-                 "Plotting_module")
+                 mod_Plotting_module_ui("Plotting_module_1"))
 
       )
     )
@@ -47,20 +48,3 @@ golem_add_external_resources <- function() {
   )
 }
 
-#' @importFrom shiny NS tagList
-mod_nucleus_ui <- function(id){
-  ns <- NS(id)
-  tagList(
-
-  )
-}
-
-#' nucleus Server Functions
-#'
-#' @noRd
-mod_nucleus_server <- function(id){
-  moduleServer( id, function(input, output, session){
-    ns <- session$ns
-
-  })
-}
