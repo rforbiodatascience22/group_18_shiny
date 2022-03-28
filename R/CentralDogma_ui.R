@@ -14,6 +14,7 @@ app_ui <- function(request) {
       tabsetPanel(
         tabPanel(title = "panel1",
                  "Input_module"),
+        mod_Input_module_ui("Input_module_1"),
         tabPanel(title = "panel2",
                  "Plotting_module"),
         mod_Plotting_module_ui("Plotting_module_1")

@@ -8,7 +8,8 @@
 app_server <- function(input, output, session) {
   # Your application server logic
 
-   mod_Plotting_module_ui("Plotting_module_1")
+  mod_Input_module_server("Input_module_1")
+  mod_Plotting_module_server("Plotting_module_1")
 }
 
 #' @importFrom shiny NS tagList
