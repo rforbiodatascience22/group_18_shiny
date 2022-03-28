@@ -14,6 +14,10 @@ app_ui <- function(request) {
       tabsetPanel(
         tabPanel(title = "DNA Input",
                  mod_Input_module_ui("Input_module_1")),
+        tabPanel(title = "RNA Input",
+                 mod_Transcription_module_ui("Transcription_module_1")),
+        tabPanel(title = "peptide Input",
+                 mod_Translation_module_ui("Translation_module_1")),
         tabPanel(title = "Plot",
                  mod_Plotting_module_ui("Plotting_module_1"))
 
@@ -40,7 +44,7 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "myshinyapp"
+      app_title = "Central Dogma "
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()

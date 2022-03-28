@@ -20,6 +20,8 @@ attachment::att_amend_desc()
 ## Add modules ----
 ## Create a module infrastructure in R/
 golem::add_module(name = "Input_module", with_test = FALSE) # Name of the module
+golem::add_module(name = "Transcription_module", with_test = FALSE)
+golem::add_module(name = "Translation_module", with_test = FALSE)
 golem::add_module(name = "Plotting_module", with_test = FALSE) # Name of the module
 
 ## Add helper functions ----
