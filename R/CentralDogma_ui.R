@@ -13,11 +13,9 @@ app_ui <- function(request) {
       h1("myshinyapp"),
       tabsetPanel(
         tabPanel(title = "panel1",
-                 "Input_module"),
-        mod_Input_module_ui("Input_module_1"),
+                 "mod_Input_module"),
         tabPanel(title = "panel2",
-                 "Plotting_module"),
-        mod_Plotting_module_ui("Plotting_module_1")
+                 "Plotting_module")
 
       )
     )
