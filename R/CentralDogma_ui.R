@@ -13,7 +13,6 @@ app_ui <- function(request) {
       h1("myshinyapp"),
       tabsetPanel(
         tabPanel(title = "DNA Input",
-
                  mod_Input_module_ui("Input_module_1")),
         tabPanel(title = "Plot",
                  mod_Plotting_module_ui("Plotting_module_1"))

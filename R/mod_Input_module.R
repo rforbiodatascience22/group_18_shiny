@@ -38,7 +38,20 @@ mod_Input_module_ui <- function(id){
 mod_Input_module_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-
+    dna <- ""
+    observeEvent(input$generate_dna, {
+      dna <- centralDogma::random_dna(input$dna_length)
+      output$DNA <- renderUI({
+        textAreaInput(
+          inputId = ns("DNA"),
+          label = "DNA sequence",
+          placeholder = "Insert DNA sequence",
+          value = dna,
+          height = 100,
+          width = 600
+        )
+      })
+    })
   })
 }
 
