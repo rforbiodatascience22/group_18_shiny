@@ -39,3 +39,21 @@ golem_add_external_resources <- function() {
     # for example, you can add shinyalert::useShinyalert()
   )
 }
+
+#' @importFrom shiny NS tagList
+mod_nucleus_ui <- function(id){
+  ns <- NS(id)
+  tagList(
+
+  )
+}
+
+#' nucleus Server Functions
+#'
+#' @noRd
+mod_nucleus_server <- function(id){
+  moduleServer( id, function(input, output, session){
+    ns <- session$ns
+
+  })
+}
