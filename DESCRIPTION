@@ -1,17 +1,13 @@
 Package: CentralDogma
-Title: An Amazing Shiny App
+Title: CentralDogma
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+Authors@R: c(person('Alem', 'Gusinac', email = 's213012@dtu.dk', role = c('cre', 'aut')), person('Chau Zhong', 'Belkis', email = 's181024@dtu.dk', role = 'aut'), person('Maurice', 'Kappelmeyer', email = 's212710@dtu.dk', role = 'aut'), person('Karolina Zofia', 'Tudelska', email = 's212846@dtu.dk', role = 'aut'), person('Yassine', 'Damergi', email = 's211972@dtu.dk', role = 'aut'))
+Description: CentralDogma
+License: MIT + file LICENSE
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.3.2),
     shiny (>= 1.7.1)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
