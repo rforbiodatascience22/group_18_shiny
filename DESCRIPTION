@@ -1,12 +1,19 @@
 Package: CentralDogma
 Title: CentralDogma
 Version: 0.0.0.9000
-Authors@R: c(person('Alem', 'Gusinac', email = 's213012@dtu.dk', role = c('cre', 'aut')), person('Chau Zhong', 'Belkis', email = 's181024@dtu.dk', role = 'aut'), person('Maurice', 'Kappelmeyer', email = 's212710@dtu.dk', role = 'aut'), person('Karolina Zofia', 'Tudelska', email = 's212846@dtu.dk', role = 'aut'), person('Yassine', 'Damergi', email = 's211972@dtu.dk', role = 'aut'))
+Authors@R: c(
+    person("Alem", "Gusinac", , "s213012@dtu.dk", role = c("cre", "aut")),
+    person("Chau Zhong", "Belkis", , "s181024@dtu.dk", role = "aut"),
+    person("Maurice", "Kappelmeyer", , "s212710@dtu.dk", role = "aut"),
+    person("Karolina Zofia", "Tudelska", , "s212846@dtu.dk", role = "aut"),
+    person("Yassine", "Damergi", , "s211972@dtu.dk", role = "aut")
+  )
 Description: CentralDogma
 License: MIT + file LICENSE
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.3.2),
+    magrittr,
     shiny (>= 1.7.1)
 Encoding: UTF-8
 LazyData: true

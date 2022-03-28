@@ -4,28 +4,35 @@
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
 #'
-#' @noRd 
+#' @noRd
 #'
-#' @importFrom shiny NS tagList 
+#' @importFrom shiny NS tagList
 mod_Plotting_module_ui <- function(id){
   ns <- NS(id)
   tagList(
- 
+    sidebarLayout(
+      sidebarPanel(
+        "peptide_sequence"
+      ),
+      mainPanel(
+        "plot"
+      )
+    )
   )
 }
-    
+
 #' Plotting_module Server Functions
 #'
-#' @noRd 
+#' @noRd
 mod_Plotting_module_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
- 
+
   })
 }
-    
+
 ## To be copied in the UI
 # mod_Plotting_module_ui("Plotting_module_1")
-    
+
 ## To be copied in the server
 # mod_Plotting_module_server("Plotting_module_1")
