@@ -12,10 +12,10 @@ app_ui <- function(request) {
     fluidPage(
       h1("myshinyapp"),
       tabsetPanel(
-        tabPanel(title = "panel1",
+        tabPanel(title = "DNA Input",
 
                  mod_Input_module_ui("Input_module_1")),
-        tabPanel(title = "panel2",
+        tabPanel(title = "Plot",
                  mod_Plotting_module_ui("Plotting_module_1"))
 
       )
