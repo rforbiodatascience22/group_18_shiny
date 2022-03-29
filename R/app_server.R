@@ -8,16 +8,16 @@
 app_server <- function(input, output, session) {
   # Your application server logic
   dna <- reactiveVal()
-
-  mod_Input_module_server("Input_module_1")
+  DNA <- reactiveVal()
+  dna_output <- mod_Input_module_server("Input_module_1")
   RNA <- reactiveVal()
 
-  mod_Transcription_module_server("Transcription_module_1")
+  rna_sub_output <- mod_Transcription_module_server("Transcription_module_1", dna_output)
 
   peptide <- reactiveVal()
-  mod_Translation_module_server("Translation_module_1")
+  rna_output <- mod_Translation_module_server("Translation_module_1", rna_sub_output)
 
-  mod_Plotting_module_server("Plotting_module_1")
+  mod_Plotting_module_server("Plotting_module_1", rna_output)
 
 }
 

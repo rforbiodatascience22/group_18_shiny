@@ -10,9 +10,14 @@
 mod_Transcription_module_ui <- function(id){
   ns <- NS(id)
   tagList(
-    shiny::sidebarLayout(
-      shiny::sidebarPanel(
-        shiny::textAreaInput(
+    fluidRow(
+      column(8, shiny::sidebarPanel(
+        shiny::verbatimTextOutput(
+        outputId = ns("RNA"),
+
+      ),
+      width = 600)),
+      column(4, shiny::textAreaInput(
           inputId = ns("DNA"),
           label = "DNA sequence",
           width = 300,
@@ -20,14 +25,8 @@ mod_Transcription_module_ui <- function(id){
           placeholder = "Insert DNA sequence"
         )
       )
-    ,
-    shiny::mainPanel(
-      shiny::verbatimTextOutput(
-        outputId = ns("RNA")
-      )
     )
   )
-)
 }
 
 
@@ -36,19 +35,20 @@ mod_Transcription_module_ui <- function(id){
 #' Transcription_module Server Functions
 #'
 #' @noRd
-mod_Transcription_module_server <- function(id){
+mod_Transcription_module_server <- function(id, input_dna){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-
-    output$RNA <- renderPrint({
+    rna = ""
+    output$RNA <- reactive({
       if(input$DNA == ""){
-        NULL
+
       } else{
-        print("mRNA sequence : ")
-        input$DNA %>%
+        rna <- input$DNA %>%
           centralDogma::transcribe()
+        rna
       }
     })
+  return(rna)
   })
 }
 

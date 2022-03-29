@@ -47,11 +47,11 @@ mod_Input_module_server <- function(id){
           label = "DNA sequence",
           placeholder = "Insert DNA sequence",
           value = dna,
-          height = 100,
           width = 600
         )
       })
     })
+  return("dna")
   })
 }
 

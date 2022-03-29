@@ -10,23 +10,21 @@
 mod_Plotting_module_ui <- function(id){
   ns <- NS(id)
   tagList(
-    shiny::sidebarLayout(
-      shiny::sidebarPanel(
+    fluidRow(
+      column(8, shiny::plotOutput(
+        outputId = ns("abundance")
+      )),
+      column(4,
         shiny::textAreaInput(
           inputId = ns("peptide"),
           label = "Peptide sequence",
           width = 300,
           height = 100,
           placeholder = "Insert peptide sequence"
-        )
-      ),
-      shiny::mainPanel(
-        shiny::plotOutput(
-          outputId = ns("abundance")
+          )
         )
       )
     )
-  )
 }
 
 
@@ -37,7 +35,7 @@ mod_Plotting_module_ui <- function(id){
 #' Plotting_module Server Functions
 #'
 #' @noRd
-mod_Plotting_module_server <- function(id){
+mod_Plotting_module_server <- function(id, input_rna_sub){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     output$abundance <- renderPlot({

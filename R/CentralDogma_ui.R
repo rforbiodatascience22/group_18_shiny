@@ -10,13 +10,13 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("myshinyapp"),
+      h1("Central Dogma Tool"),
       tabsetPanel(
         tabPanel(title = "DNA Input",
                  mod_Input_module_ui("Input_module_1")),
         tabPanel(title = "RNA Input",
                  mod_Transcription_module_ui("Transcription_module_1")),
-        tabPanel(title = "peptide Input",
+        tabPanel(title = "Peptide Input",
                  mod_Translation_module_ui("Translation_module_1")),
         tabPanel(title = "Plot",
                  mod_Plotting_module_ui("Plotting_module_1"))

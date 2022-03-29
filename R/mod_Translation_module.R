@@ -10,22 +10,19 @@
 mod_Translation_module_ui <- function(id){
   ns <- NS(id)
   tagList(
-    shiny::sidebarLayout(
-      shiny::sidebarPanel(
-        shiny::textAreaInput(
+    fluidRow(
+      column(8, shiny::sidebarPanel(
+        shiny::verbatimTextOutput(
+          outputId = ns("peptide")
+      ),
+      width = 600)),
+      column(4, shiny::textAreaInput(
           inputId = ns("rna"),
           label = "RNA sequence",
           width = 300,
           height = 100,
           placeholder = "Insert RNA sequence"
         )
-      )
-      ,
-      shiny::mainPanel(
-        shiny::verbatimTextOutput(
-          outputId = ns("peptide")
-        )
-
       )
     )
   )
@@ -34,20 +31,21 @@ mod_Translation_module_ui <- function(id){
 #' Translation_module Server Functions
 #'
 #' @noRd
-mod_Translation_module_server <- function(id){
+mod_Translation_module_server <- function(id, input_rna){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-
-    output$peptide <- renderPrint({
+    rna_sub = ""
+    output$peptide <- reactive({
       if(input$rna == ""){
-        NULL
+
       } else{
-        print("Peptide sequence : ")
-        input$rna %>%
+        rna_sub <- input$rna %>%
           centralDogma::codon_split()%>%
             centralDogma::translate()
+        rna_sub
       }
     })
+  return(rna_sub)
   })
 }
 
